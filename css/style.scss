@@ -1,0 +1,142 @@
+$colores: (
+blanco: #FFFF,
+negro: #000,
+naranja: #ffc107,
+gris: #808080
+);
+
+@mixin redes{
+    padding: 20px;
+    font-size: 30px;
+    color: grey;
+}
+
+%margin{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+    
+    
+
+body{
+    background-color: map-get($colores, negro);
+}
+    
+.container-fluid{
+    height: 100%;
+}
+
+/*Navbar and Footer*/
+    
+.logo{
+    height: 100px;
+}
+
+nav{
+    font-size: 20px;
+
+    nav-item a {
+        color: map-get($colores, naranja);
+        }
+
+    li a::selection{
+        background-color: map-get($colores, naranja);
+        color: black;
+    }
+}
+
+.redes{
+    display: flex;
+    justify-content: space-around;
+    @include redes;
+
+    & i:hover{
+        transform: scale(1.7);
+        cursor: pointer;
+    }   
+}
+    
+.copy-footer{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+
+    & p::selection{
+        background-color: map-get($colores, naranja);
+        color: black;
+    }
+        
+}
+
+/*main*/
+
+.flex-container-main{
+    height: 500px;
+    background-image: url(/img/ricardo1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.nosotros{
+    float: right;
+    width: 500px;
+    background-color: rgba(255,255,255,0.5);
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.main-bio{
+    background-color: map-get($colores, negro);
+    @extend %margin;
+
+    .bio-img img{
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+        margin-top: 20px;
+        margin-left: 100px;
+    }
+
+    ::selection{
+        background-color: map-get($colores, naranja);
+        color: black;
+    }
+
+    p::selection{
+        background-color: map-get($colores, naranja);
+        color: map-get($colores, negro);
+    }
+    
+
+
+    p::first-letter{
+        font-size: 31px;
+        color: map-get($colores, naranja);
+    }
+    
+    h2{
+        color: map-get($colores, naranja);
+        text-align: center;
+    }
+    
+    }
+    
+    /*Galeria*/
+
+#carrousel{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+    
+
+.galeria-container img{
+    height: 400px;
+    object-fit: contain;
+}
+
+h2{
+    color: map-get($colores, naranja);
+    text-align: center;
+}
